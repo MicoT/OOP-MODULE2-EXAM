@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:my_app/auth_screen.dart';
 
@@ -50,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               margin: EdgeInsets.only(left: 20, top: 120),
               child: Image.asset(
-                'assets/DBP-clear.png',
+                'assets/DBP_CLEAR.png',
                 scale: 20,
               ),
             ),
@@ -60,8 +59,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 'MOBILE BANKING',
                 style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                    fontFamily: 'roboto',
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Antonio',
                     color: Colors.white),
               ),
             )
