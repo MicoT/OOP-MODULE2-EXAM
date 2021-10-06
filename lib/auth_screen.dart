@@ -7,36 +7,37 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xFF252525),
         body: Container(
             child: Padding(
-      padding: const EdgeInsets.all(25.0),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: EdgeInsets.only(left: 20, top: 120),
-            child: Image.asset(
-              'assets/DBP_CLEAR.png',
-              scale: 15,
-            ),
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.only(left: 20, top: 120),
+                child: Image.asset(
+                  'assets/DBP_CLEAR.png',
+                  scale: 15,
+                ),
+              ),
+              Container(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Login()));
+                        },
+                        child: Text(
+                          "Login",
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        )),
+                  )),
+            ],
           ),
-          Container(
-              width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
-                    },
-                    child: Text(
-                      "Login",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    )),
-              )),
-        ],
-      ),
-    )));
+        )));
   }
 }
