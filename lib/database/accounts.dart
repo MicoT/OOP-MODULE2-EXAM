@@ -18,13 +18,13 @@ List<Accounts> accounts = accountsData
 
 var accountsData = [
   {
-    "user": "Lorem Ipsum",
-    "accNumber": "00023678234",
-    "balance": 15080.59,
+    "user": "Admin",
+    "accNumber": "0123456789",
+    "balance": 10000.00,
   },
-  {
-    "user": "Lorem Ipsum",
-    "accNumber": "98675346875",
-    "balance": 200.00,
-  }
+  //{
+  //  "user": "Lorem Ipsum",
+  //  "accNumber": "98675346875",
+  //  "balance": 200.00,
+  //}
 ];

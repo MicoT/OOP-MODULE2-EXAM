@@ -10,32 +10,58 @@ class AuthScreen extends StatelessWidget {
         backgroundColor: Color(0xFF252525),
         body: Container(
             child: Padding(
-          padding: const EdgeInsets.all(25.0),
+          padding: const EdgeInsets.all(50.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 20, top: 120),
+                margin: EdgeInsets.only(left: 20),
                 child: Image.asset(
-                  'assets/DBP_CLEAR.png',
-                  scale: 15,
+                  'assets/DBP.png',
                 ),
               ),
               Container(
                   width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     child: ElevatedButton(
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) => Login()));
                         },
-                        child: Text(
-                          "Login",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        )),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(Icons.person),
+                              Text("Login",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20)),
+                            ])),
                   )),
+              Text("or",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w900)),
+              Container(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Login()));
+                      },
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text("Create an Account",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20)),
+                          ]),
+                    ),
+                  ))
             ],
           ),
         )));

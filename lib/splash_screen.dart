@@ -16,11 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigateToHome() async {
-    await Future.delayed(Duration(milliseconds: 4000), () {});
+    await Future.delayed(Duration(milliseconds: 2000), () {});
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
-          transitionDuration: Duration(milliseconds: 850),
+          transitionDuration: Duration(milliseconds: 600),
           transitionsBuilder: (BuildContext context,
               Animation<double> animation,
               Animation<double> secAnimation,
@@ -47,23 +47,12 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 20, top: 120),
+              margin: EdgeInsets.only(left: 20, top: 160),
               child: Image.asset(
-                'assets/DBP_CLEAR.png',
+                'assets/DBP_name.png',
                 scale: 20,
               ),
             ),
-            Container(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                'MOBILE BANKING',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Antonio',
-                    color: Colors.white),
-              ),
-            )
           ],
         ),
       ),

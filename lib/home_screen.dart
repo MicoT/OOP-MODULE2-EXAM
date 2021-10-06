@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/cards/action_card.dart';
 import 'package:my_app/database/actions.dart';
 import 'package:my_app/database/accounts.dart';
+import 'package:my_app/under_development.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -125,12 +126,13 @@ class HomeScreen extends StatelessWidget {
                             itemBuilder: (context, index) {
                               var current;
                               return GestureDetector(
-                                // onTap: () {
-                                //   Navigator.push(
-                                //       context,
-                                //       MaterialPageRoute(
-                                //           builder: (context) => actions[index].navigateTo));
-                                // },
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              actions[index].navigateTo()));
+                                },
                                 child: ActionCard(
                                     action: actions[index].action,
                                     icon: actions[index].icon,
@@ -150,7 +152,8 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeScreen()));
+                                  builder: (context) =>
+                                      UnderDevelopmentScreen()));
                         },
                         child: Text("View Transaction History",
                             style:
