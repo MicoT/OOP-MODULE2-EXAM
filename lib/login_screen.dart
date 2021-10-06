@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_screen.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -92,7 +93,12 @@ class Login extends StatelessWidget {
                             child: Padding(
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreen()));
+                                },
                                 child: Text("Login",
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 16)),
