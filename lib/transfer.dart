@@ -38,13 +38,10 @@ class _HomePageState extends State<HomePageScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                //Container(
-                //child: Image.asset('assets/under-construction.png',
-                //height: 500, width: 500),
-                //),
                 Container(
                     height: 199,
                     child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
                         itemCount: accounts.length,
                         itemBuilder: (context, index) {
                           return Container(
@@ -52,33 +49,54 @@ class _HomePageState extends State<HomePageScreen> {
                             height: 199,
                             width: 344,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(20),
                                 gradient: LinearGradient(
                                     begin: Alignment.topLeft,
                                     end: Alignment.bottomRight,
                                     colors: <Color>[
-                                      Color(0xFF715FE0),
-                                      Color(0xFF792D3D)
+                                      Color(0xFF00142D),
+                                      Color(0xFF003478),
+                                      Color(0xFFF25A14),
                                     ]),
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Colors.grey.withOpacity(0.1),
-                                      spreadRadius: 3,
+                                      color: Colors.white.withOpacity(0.6),
+                                      spreadRadius: 1,
                                       blurRadius: 1,
-                                      offset: Offset(0, 5))
+                                      offset: Offset(3, 2))
                                 ]),
                             child: Stack(
                               children: [
                                 Positioned(
-                                  left: 30,
-                                  top: 25,
+                                  left: 28,
+                                  top: 35,
                                   child: Text("ACCOUNT NUMBER",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 10)),
+                                          color: Colors.white,
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w300)),
                                 ),
                                 Positioned(
                                   left: 30,
-                                  top: 40,
+                                  bottom: 21,
+                                  child: Text(accounts[index].user,
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 16)),
+                                ),
+                                Positioned(
+                                  left: 30,
+                                  bottom: 45,
+                                  child: Text("CARD HOLDERNAME",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400)),
+                                ),
+                                Positioned(
+                                  left: 32,
+                                  top: 60,
                                   child: Text(accounts[index].accNumber,
                                       style: TextStyle(
                                           color: Colors.white,
@@ -86,8 +104,16 @@ class _HomePageState extends State<HomePageScreen> {
                                           fontSize: 20)),
                                 ),
                                 Positioned(
-                                  right: 30,
-                                  bottom: 45,
+                                  right: 18,
+                                  child: Image.asset(
+                                    accounts[index].cardType,
+                                    width: 80,
+                                    height: 80,
+                                  ),
+                                ),
+                                Positioned(
+                                  right: 28,
+                                  bottom: 18,
                                   child: Text(
                                       "₱" + accounts[index].balance.toString(),
                                       style: TextStyle(
@@ -96,11 +122,13 @@ class _HomePageState extends State<HomePageScreen> {
                                           fontSize: 25)),
                                 ),
                                 Positioned(
-                                  right: 30,
-                                  bottom: 30,
-                                  child: Text("AVAILABLE BALANCE",
+                                  right: 36,
+                                  bottom: 48,
+                                  child: Text("WALLET BALANCE",
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 10)),
+                                          color: Colors.white,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w300)),
                                 )
                               ],
                             ),
@@ -126,12 +154,15 @@ class _HomePageState extends State<HomePageScreen> {
                     underline: Container(),
                     icon: Icon(
                       Icons.arrow_downward,
-                      color: Colors.yellow,
+                      color: Colors.black,
                     ),
                     hint: Center(
                         child: Text(
-                      'Select Bank',
-                      style: TextStyle(color: Colors.white),
+                      'Mode of Payment',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w900),
                     )),
 
                     isExpanded: true,
@@ -157,8 +188,8 @@ class _HomePageState extends State<HomePageScreen> {
                                 e,
                                 style: TextStyle(
                                     fontSize: 20,
-                                    color: Colors.amber,
-                                    fontWeight: FontWeight.bold),
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w900),
                               ),
                             ))
                         .toList(),
@@ -173,7 +204,7 @@ class _HomePageState extends State<HomePageScreen> {
                 Container(
                   alignment: Alignment.bottomCenter,
                   child: TextField(
-                    maxLength: 11,
+                    maxLength: 12,
                     decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide:
