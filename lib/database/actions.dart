@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
-import '../under_development.dart';
+import '../test2.dart';
+import 'package:my_app/under_development.dart';
+import 'package:my_app/transfer.dart';
 
 class Actions {
   String action;
@@ -11,7 +13,7 @@ class Actions {
 
 var actions = [
   Actions("Money\nTransfer", "assets/money_transfer_blue.svg",
-      () => UnderDevelopmentScreen()),
+      () => MoneyTransferScreen()),
   Actions("Bank\nWithdraw", "assets/bank_withdraw_blue.svg",
       () => UnderDevelopmentScreen()),
   Actions("Insight\nTracking", "assets/insight_tracking_blue.svg",
