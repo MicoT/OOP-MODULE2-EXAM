@@ -37,10 +37,12 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Text("Welcome back,",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500)),
-                        Text("Admin",
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900)),
+                        Text("\t Admin",
                             style: TextStyle(
-                                color: Colors.indigo[700],
+                                color: Colors.blue[900],
                                 fontSize: 30,
                                 fontWeight: FontWeight.w900))
                       ]),

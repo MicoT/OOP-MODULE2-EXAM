@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/login_screen.dart';
+import 'package:my_app/under_development.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -33,7 +34,10 @@ class AuthScreen extends StatelessWidget {
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Icon(Icons.person),
+                              Icon(
+                                Icons.person,
+                                size: 30,
+                              ),
                               Text("Login",
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 20)),
@@ -45,8 +49,11 @@ class AuthScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Login()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    UnderDevelopmentScreen()));
                       },
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,

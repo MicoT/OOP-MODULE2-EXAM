@@ -97,7 +97,8 @@ class LoginFormState extends State<LoginForm> {
                       fillColor: Color(0xFF252525),
                       hintText: "\tPassword",
                       hintStyle: TextStyle(fontSize: 20, color: Colors.white),
-                      prefixIcon: Icon(Icons.lock, color: Colors.orange[800]),
+                      prefixIcon:
+                          Icon(Icons.lock, size: 45, color: Colors.orange[800]),
                       errorStyle: TextStyle(height: 0)),
                   validator: (value) => value == "Admin" ? null : ''),
               Padding(padding: EdgeInsets.symmetric(vertical: 5)),

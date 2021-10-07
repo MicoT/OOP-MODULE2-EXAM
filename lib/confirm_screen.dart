@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/transfer.dart' as global;
 
 class Confirmation extends StatelessWidget {
   Confirmation({Key? key}) : super(key: key);
