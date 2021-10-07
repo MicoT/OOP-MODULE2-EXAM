@@ -18,3 +18,4 @@ var actions = [
   Actions("Insight\nTracking", "assets/insight_tracking_blue.svg",
       () => UnderDevelopmentScreen()),
 ];
+//Final

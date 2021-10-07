@@ -24,11 +24,20 @@ class _HomePageState extends State<HomePageScreen> {
 
     return Scaffold(
         appBar: new AppBar(
-          title: Text(
-            "Money Transfer",
-            style: TextStyle(color: Colors.black),
+          title: Text("Money Transfer", style: TextStyle(color: Colors.white)),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [
+                    const Color(0xFF414141),
+                    const Color(0xFF212121),
+                  ],
+                  begin: const FractionalOffset(0.0, 0.0),
+                  end: const FractionalOffset(1.0, 0.0),
+                  stops: [0.0, 1.0],
+                  tileMode: TileMode.clamp),
+            ),
           ),
-          elevation: 0,
         ),
         backgroundColor: Color(0xFF252525),
         body: SingleChildScrollView(
