@@ -39,11 +39,6 @@ class AuthScreen extends StatelessWidget {
                                       color: Colors.white, fontSize: 20)),
                             ])),
                   )),
-              Text("or",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w900)),
               Container(
                   width: double.infinity,
                   child: Padding(

@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:my_app/confirmation.dart';
 import 'package:my_app/database/accounts.dart';
 
-class MoneyTransferScreen extends StatelessWidget {
-  MoneyTransferScreen({Key? key}) : super(key: key);
-  String dropdownStr = "Currency";
-  var _mode = ['Gcash', 'PayMaya', 'Steam', 'Paypal', 'Others'];
-  final myController = TextEditingController();
+class HomePageScreen extends StatefulWidget {
+  const HomePageScreen({Key? key}) : super(key: key);
 
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePageScreen> {
+  List<String> _animals = ['Gcash', 'PayMaya', 'Steam', 'Paypal', 'Others'];
+  final myController = TextEditingController();
+  String? _selectedColor;
   @override
   Widget build(BuildContext context) {
     Row(
@@ -37,7 +42,6 @@ class MoneyTransferScreen extends StatelessWidget {
               Container(
                   height: 199,
                   child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
                       itemCount: accounts.length,
                       itemBuilder: (context, index) {
                         return Container(
@@ -99,9 +103,67 @@ class MoneyTransferScreen extends StatelessWidget {
                           ),
                         );
                       })),
+              Container(
+                width: 250,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(30)),
+                margin: EdgeInsets.only(top: 30, left: 50),
+                child: DropdownButton<String>(
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedColor = value;
+                    });
+                  },
+                  value: _selectedColor,
+
+                  // Hide the default underline
+                  underline: Container(),
+                  icon: Icon(
+                    Icons.arrow_downward,
+                    color: Colors.yellow,
+                  ),
+                  hint: Center(
+                      child: Text(
+                    'Select Bank',
+                    style: TextStyle(color: Colors.white),
+                  )),
+
+                  isExpanded: true,
+
+                  // The list of options
+                  items: _animals
+                      .map((e) => DropdownMenuItem(
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                e,
+                                style: TextStyle(fontSize: 20),
+                              ),
+                            ),
+                            value: e,
+                          ))
+                      .toList(),
+
+                  // Customize the selected item
+                  selectedItemBuilder: (BuildContext context) => _animals
+                      .map((e) => Center(
+                            child: Text(
+                              e,
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.amber,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ))
+                      .toList(),
+                ),
+              ),
               SizedBox(height: 30),
               Text(
-                'Enter your name:',
+                'Enter Account Number:',
                 style: TextStyle(color: Colors.deepOrangeAccent),
               ),
               Padding(padding: EdgeInsets.symmetric(vertical: 10)),
@@ -141,59 +203,13 @@ class MoneyTransferScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                alignment: Alignment.bottomLeft,
-                padding: const EdgeInsets.only(top: 50, right: 50),
-                child: DropdownButton<String>(
-                  items: null,
-                  value: dropdownStr,
-                  onChanged: null,
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomCenter,
-                padding: const EdgeInsets.only(left: 50.0),
-                child: TextField(
-                  maxLength: 11,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: Colors.grey, width: 3.0),
-                    ),
-                    border: const OutlineInputBorder(),
-                    labelStyle: new TextStyle(color: Colors.orangeAccent),
-                  ),
-                  controller: myController,
-                ),
-              ),
-              Text(
-                'Send to Another Account',
-                style: TextStyle(color: Colors.deepOrangeAccent),
-              ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
-              Container(
-                alignment: Alignment.bottomCenter,
-                padding: const EdgeInsets.only(left: 80.0),
-                child: TextField(
-                  maxLength: 11,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: Colors.grey, width: 3.0),
-                    ),
-                    border: const OutlineInputBorder(),
-                    labelStyle: new TextStyle(color: Colors.orangeAccent),
-                  ),
-                  controller: myController,
-                ),
-              ),
-              Container(
                 alignment: Alignment.bottomCenter,
                 child: new ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MoneyTransferScreen()));
+                            builder: (context) => HomePageScreen()));
                   },
                   child: Text(
                     'Confirm',

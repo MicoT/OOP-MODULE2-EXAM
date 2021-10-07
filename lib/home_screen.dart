@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xFF252525),
         body: Container(
             margin: EdgeInsets.only(top: 8),
             child: Padding(
