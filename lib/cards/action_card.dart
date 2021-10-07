@@ -25,20 +25,16 @@ class _ActionCardState extends State<ActionCard> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 4, vertical: 16),
-      width: 125,
+      width: 110,
       height: 125,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.indigo),
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: Color(0xFF00142D)),
         color: Colors.white,
-        // boxShadow: [
-        //   BoxShadow(
-        //       color: Colors.grey,
-        //       blurRadius: 1,
-        //       spreadRadius: 0.1,
-        //       offset: Offset(2, 2)
-        //   )
-        // ],
+        boxShadow: [
+          BoxShadow(
+              color: Color(0xFFF25A14), spreadRadius: 0.1, offset: Offset(2, 2))
+        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),

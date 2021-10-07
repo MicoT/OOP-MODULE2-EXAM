@@ -155,7 +155,6 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Container(
                               height: 165,
-                              width: 270,
                               child: ListView.builder(
                                 itemCount: actions.length,
                                 scrollDirection: Axis.horizontal,
@@ -181,27 +180,30 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Container(
                         width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        UnderDevelopmentScreen()));
-                          },
-                          child: Text("View Transaction History",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w900)),
-                          style: ButtonStyle(
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(20)))),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 15),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          UnderDevelopmentScreen()));
+                            },
+                            child: Text("View Transaction History",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w900)),
+                            style: ButtonStyle(
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(20)))),
+                          ),
                         ),
-                      ),
+                      )
                     ])))));
   }
 }
