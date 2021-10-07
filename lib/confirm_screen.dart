@@ -1,33 +1,38 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:my_app/transfer.dart' as global;
 
-abstract class ConfirmScreen extends StatefulWidget {
-  ConfirmScreen({required Key key}) : super(key: key);
-
-  @override
-  _ConfirmScreenState() => _ConfirmScreenState();
-}
-
-class _ComfirmScreenState {
-  get kSubTextStyle => null;
+class Confirmation extends StatelessWidget {
+  Confirmation({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white10,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(),
-            child: Text(
-              'Your payment was successful',
-              textAlign: TextAlign.center,
-              style: kSubTextStyle,
-            ),
+      appBar: new AppBar(
+        elevation: 0,
+      ),
+      backgroundColor: Color(0xFF252525),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                alignment: Alignment.bottomCenter,
+                child: Text("Payment Confirmation",
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                    textAlign: TextAlign.center),
+              ),
+              Padding(padding: EdgeInsets.symmetric(vertical: 10)),
+              Text("Account number:"),
+              Container(),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

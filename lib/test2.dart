@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/confirmation.dart';
+import 'package:my_app/confirm_screen.dart';
 import 'package:my_app/database/accounts.dart';
 
 class Test2 extends StatelessWidget {

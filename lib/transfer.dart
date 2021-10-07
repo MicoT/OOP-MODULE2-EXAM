@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/confirmation.dart';
+import 'package:my_app/confirm_screen.dart';
 import 'package:my_app/database/accounts.dart';
+import 'package:my_app/home_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({Key? key}) : super(key: key);
@@ -11,7 +12,9 @@ class HomePageScreen extends StatefulWidget {
 
 class _HomePageState extends State<HomePageScreen> {
   List<String> _animals = ['Gcash', 'PayMaya', 'Steam', 'Paypal', 'Others'];
-  final myController = TextEditingController();
+  final firstInt = TextEditingController();
+  final secondInt = TextEditingController();
+
   String? _selectedColor;
   @override
   Widget build(BuildContext context) {
@@ -179,6 +182,7 @@ class _HomePageState extends State<HomePageScreen> {
                     border: const OutlineInputBorder(),
                     labelStyle: new TextStyle(color: Colors.orangeAccent),
                   ),
+                  controller: firstInt,
                 ),
               ),
               Padding(padding: EdgeInsets.symmetric(vertical: 10)),
@@ -199,27 +203,64 @@ class _HomePageState extends State<HomePageScreen> {
                     border: const OutlineInputBorder(),
                     labelStyle: new TextStyle(color: Colors.orangeAccent),
                   ),
-                  controller: myController,
+                  controller: secondInt,
                 ),
               ),
-              Container(
-                alignment: Alignment.bottomCenter,
-                child: new ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePageScreen()));
-                  },
-                  child: Text(
-                    'Confirm',
-                    style: TextStyle(color: Colors.orangeAccent),
-                  ),
-                ),
-              ),
+              // Container(
+              //   alignment: Alignment.bottomCenter,
+              //   child: new ElevatedButton(
+              //     onPressed: () {
+              //       Navigator.push(
+              //           context,
+              //           MaterialPageRoute(
+              //               builder: (context) => Confirmation()));
+              //     },
+              //     child: Text(
+              //       'Confirm',
+              //       style: TextStyle(color: Colors.orangeAccent),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        // When the user presses the button, show an alert dialog containing
+        // the text that the user has entered into the text field.
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                // Retrieve the text the that user has entered by using the
+                // TextEditingController.
+
+                backgroundColor: Color(0xFF212121),
+                content: Text(
+                  "Payment Confirmation!" +
+                      "\n" +
+                      "\n" +
+                      "\n" +
+                      "Account number: " +
+                      firstInt.text +
+                      "\n" +
+                      "Total Amount: PHP " +
+                      secondInt.text +
+                      "\n"
+                          "Mode of Payment: " +
+                      _selectedColor.toString(),
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              );
+            },
+          );
+        },
+        tooltip: 'Confirm Payment',
+        child: const Icon(Icons.task_alt),
       ),
     );
   }
