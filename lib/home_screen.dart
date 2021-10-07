@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xFF252525),
         body: Container(
             margin: EdgeInsets.only(top: 8),
             child: Padding(
@@ -36,10 +37,12 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Text("Welcome back,",
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500)),
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500)),
                         Text("Admin",
                             style: TextStyle(
-                                color: Colors.indigo[700],
+                                color: Colors.blue,
                                 fontSize: 30,
                                 fontWeight: FontWeight.w900))
                       ]),
@@ -60,8 +63,8 @@ class HomeScreen extends StatelessWidget {
                                       begin: Alignment.topLeft,
                                       end: Alignment.bottomRight,
                                       colors: <Color>[
-                                        Color(0xFF715FE0),
-                                        Color(0xFF792D3D)
+                                        Colors.blue,
+                                        Colors.orange,
                                       ]),
                                   boxShadow: [
                                     BoxShadow(
