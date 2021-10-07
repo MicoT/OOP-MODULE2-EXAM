@@ -21,10 +21,10 @@ class UnderDevelopmentScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              //Container(
-              //child: Image.asset('assets/under-construction.png',
-              //height: 500, width: 500),
-              //),
+              Container(
+                child: Image.asset('assets/under_construction.png',
+                    height: 500, width: 500),
+              ),
               Container(
                 alignment: Alignment.bottomCenter,
                 child: Text("Hmm. This doesn't looks right",
