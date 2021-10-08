@@ -71,6 +71,8 @@ class LoginFormState extends State<LoginForm> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextFormField(
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -88,6 +90,8 @@ class LoginFormState extends State<LoginForm> {
                   validator: (value) => value == "Admin" ? null : ''),
               Padding(padding: EdgeInsets.symmetric(vertical: 5)),
               TextFormField(
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                  textAlign: TextAlign.center,
                   obscureText: true,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(

@@ -25,6 +25,8 @@ var accountsData = [
     "balance": 10000.00,
     "cardType": "assets/logo-visa.png"
   },
+  // There should be an add card function where if the owner wants to add
+  // another card into his mobile app then it is inserted here
   // {
   //   "user": "Lorem Ipsum",
   //   "accNumber": "98675346875",

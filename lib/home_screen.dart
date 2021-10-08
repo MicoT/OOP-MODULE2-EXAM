@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:my_app/cards/action_card.dart';
 import 'package:my_app/database/actions.dart';
 import 'package:my_app/database/accounts.dart';
 import 'package:my_app/under_development.dart';
+
+import 'database/DatabaseAccount.dart';
+
+class PrivateAccount extends AdminAccount {
+  balance() {
+    return super.balance();
+  }
+}
+
+var f = NumberFormat('###,###');
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -122,8 +133,8 @@ class HomeScreen extends StatelessWidget {
                                         bottom: 18,
                                         child: Text(
                                             "₱" +
-                                                accounts[index]
-                                                    .balance
+                                                PrivateAccount()
+                                                    .balance()
                                                     .toString(),
                                             style: TextStyle(
                                                 color: Colors.white,

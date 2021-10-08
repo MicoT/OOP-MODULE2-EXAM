@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           textTheme:
               GoogleFonts.sourceCodeProTextTheme(Theme.of(context).textTheme),
-          primarySwatch: Colors.grey),
+          primarySwatch: Colors.blue),
       home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
