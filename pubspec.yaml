@@ -1,5 +1,6 @@
-name: my_app
-description: A new Flutter project.
+name: DBP
+description: DBP prototype banking app.
+
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -41,7 +42,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/wizbank-icon.png"
+  image_path: "assets/DBP.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -28,7 +28,6 @@ class Confirmation extends StatelessWidget {
               ),
               Padding(padding: EdgeInsets.symmetric(vertical: 10)),
               Text("Account number:"),
-              Container(),
             ],
           ),
         ),

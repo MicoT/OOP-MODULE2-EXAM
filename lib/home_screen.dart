@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:my_app/cards/action_card.dart';
-import 'package:my_app/database/actions.dart';
-import 'package:my_app/database/accounts.dart';
-import 'package:my_app/under_development.dart';
+import 'package:DBP/cards/action_card.dart';
+import 'package:DBP/database/actions.dart';
+import 'package:DBP/database/accounts.dart';
+import 'package:DBP/under_development.dart';
 
 import 'database/DatabaseAccount.dart';
 

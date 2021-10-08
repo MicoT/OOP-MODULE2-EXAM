@@ -1,4 +1,4 @@
-import 'package:my_app/transferMoney.dart';
+import 'package:DBP/transferMoney.dart';
 
 class UpdateBalance extends Variables {
   money() {
