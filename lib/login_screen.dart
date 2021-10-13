@@ -87,7 +87,7 @@ class LoginFormState extends State<LoginForm> {
                       prefixIcon:
                           Icon(Icons.person, size: 45, color: Colors.blue[900]),
                       errorStyle: TextStyle(height: 0)),
-                  validator: (value) => value == "Admin" ? null : ''),
+                  validator: (value) => value == "admin" ? null : ''),
               Padding(padding: EdgeInsets.symmetric(vertical: 5)),
               TextFormField(
                   style: TextStyle(fontSize: 20, color: Colors.white),
@@ -104,7 +104,7 @@ class LoginFormState extends State<LoginForm> {
                       prefixIcon:
                           Icon(Icons.lock, size: 45, color: Colors.orange[800]),
                       errorStyle: TextStyle(height: 0)),
-                  validator: (value) => value == "Admin" ? null : ''),
+                  validator: (value) => value == "admin" ? null : ''),
               Padding(padding: EdgeInsets.symmetric(vertical: 5)),
               Container(
                   width: double.infinity,

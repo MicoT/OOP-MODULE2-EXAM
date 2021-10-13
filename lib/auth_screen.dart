@@ -43,27 +43,6 @@ class AuthScreen extends StatelessWidget {
                                       color: Colors.white, fontSize: 20)),
                             ])),
                   )),
-              Container(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    UnderDevelopmentScreen()));
-                      },
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text("Create an Account",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20)),
-                          ]),
-                    ),
-                  ))
             ],
           ),
         )));

@@ -4,10 +4,11 @@ import 'package:DBP/cards/action_card.dart';
 import 'package:DBP/database/actions.dart';
 import 'package:DBP/database/accounts.dart';
 import 'package:DBP/under_development.dart';
+import 'package:intl/intl.dart';
+import 'DatabaseAccounts.dart';
+import 'confirmation_screen.dart';
 
-import 'database/DatabaseAccount.dart';
-
-class PrivateAccount extends AdminAccount {
+class PrivateAccounts extends AdminAccounts {
   balance() {
     return super.balance();
   }
@@ -15,8 +16,31 @@ class PrivateAccount extends AdminAccount {
 
 var f = NumberFormat('###,###');
 
+class Variable {
+  static int moneyTransfer = 0;
+  static int transferAccDetails = 0;
+  static String transferNotes = "";
+
+  money() {
+    return moneyTransfer;
+  }
+
+  number() {
+    var value = Variable.transferAccDetails
+        .toString()
+        .replaceAllMapped(RegExp(r".{4}"), (match) => "${match.group(0)} ");
+    return value;
+  }
+}
+
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+  final String currentBalance = PrivateAccounts().balance().toString();
+
+  currentMoney() {
+    int money = int.parse(currentBalance);
+    return money;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -133,8 +157,8 @@ class HomeScreen extends StatelessWidget {
                                         bottom: 18,
                                         child: Text(
                                             "₱" +
-                                                PrivateAccount()
-                                                    .balance()
+                                                f
+                                                    .format(currentMoney())
                                                     .toString(),
                                             style: TextStyle(
                                                 color: Colors.white,
@@ -166,6 +190,7 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           Container(
                               height: 165,
+                              width: 300,
                               child: ListView.builder(
                                 itemCount: actions.length,
                                 scrollDirection: Axis.horizontal,
@@ -189,32 +214,6 @@ class HomeScreen extends StatelessWidget {
                               )),
                         ],
                       ),
-                      Container(
-                        width: double.infinity,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          UnderDevelopmentScreen()));
-                            },
-                            child: Text("View Transaction History",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w900)),
-                            style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(20)))),
-                          ),
-                        ),
-                      )
                     ])))));
   }
 }
