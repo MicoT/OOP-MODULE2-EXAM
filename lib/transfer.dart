@@ -48,7 +48,7 @@ class TransferMoney extends State<TransferMoneyScreen> {
   final InputError = SnackBar(content: Text('Invalid credentials'));
   final String currentBalance = PrivateAccount().balance().toString();
 
-  currentMoney() {
+  current() {
     int money = int.parse(currentBalance);
     return money;
   }
@@ -81,14 +81,13 @@ class TransferMoney extends State<TransferMoneyScreen> {
                     Positioned(
                         top: 100,
                         left: 55,
-                        child:
-                            Text("PHP " + f.format(currentMoney()).toString(),
-                                style: TextStyle(
-                                  decoration: TextDecoration.none,
-                                  fontFamily: 'Glacial',
-                                  color: const Color(0xFFF25A14),
-                                  fontSize: 50,
-                                ))),
+                        child: Text("PHP " + f.format(current()).toString(),
+                            style: TextStyle(
+                              decoration: TextDecoration.none,
+                              fontFamily: 'Glacial',
+                              color: const Color(0xFFF25A14),
+                              fontSize: 50,
+                            ))),
                     //////////////////// TRANSFER AMOUNT ////////////////////
                     Positioned(
                         top: 220,
@@ -125,10 +124,9 @@ class TransferMoney extends State<TransferMoneyScreen> {
                                 return 'Please specify transfer amount.';
                               } else if (int.tryParse(value)! < 200) {
                                 return 'Amount must be more than Php 200.';
-                              } else if (int.tryParse(value)! >
-                                  currentMoney()) {
+                              } else if (int.tryParse(value)! > current()) {
                                 return 'Amount must be less than Php ' +
-                                    f.format(currentMoney()).toString() +
+                                    f.format(current()).toString() +
                                     '.';
                               } else {
                                 return null;
