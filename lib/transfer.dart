@@ -96,7 +96,6 @@ class TransferMoney extends State<TransferMoneyScreen> {
                               color: const Color(0xFFF25A14),
                               fontSize: 50,
                             ))),
-                    //////////////////// TRANSFER AMOUNT ////////////////////
                     Positioned(
                         top: 220,
                         child: Text("How much?",
@@ -106,7 +105,6 @@ class TransferMoney extends State<TransferMoneyScreen> {
                               color: const Color(0xFFF25A14),
                               fontSize: 25,
                             ))),
-                    /////////////////////////// PHP //////////////////////////
                     Positioned(
                         top: 275,
                         left: 15,
@@ -117,8 +115,6 @@ class TransferMoney extends State<TransferMoneyScreen> {
                               color: const Color(0xFFF25A14),
                               fontSize: 25,
                             ))),
-
-                    /////////////////////// PHP TEXTFIELD ////////////////////
                     Positioned(
                         top: 260,
                         left: 80,
@@ -152,8 +148,6 @@ class TransferMoney extends State<TransferMoneyScreen> {
                                 filled: true),
                           ),
                         )),
-
-                    /////////////////////// TRANSFER TO //////////////////////
                     Positioned(
                         top: 340,
                         child: Text("Transfer To",
@@ -163,8 +157,6 @@ class TransferMoney extends State<TransferMoneyScreen> {
                               color: const Color(0xFFF25A14),
                               fontSize: 25,
                             ))),
-
-                    ////////////////// TRANSFER TO TEXTFIELD //////////////////
                     Positioned(
                         top: 380,
                         child: Container(
@@ -195,7 +187,6 @@ class TransferMoney extends State<TransferMoneyScreen> {
                                 filled: true),
                           ),
                         )),
-                    ////////////////////// CONFIRM BUTTON /////////////////////
                     Positioned(
                         top: 680,
                         child: SizedBox(
