@@ -16,7 +16,10 @@ class ConfirmScreen extends StatefulWidget {
 class _ConfirmScreenState extends State<ConfirmScreen> {
   List<Step> steps = [
     Step(
-      title: const Text("Please confirm if Transfer Amount is correct."),
+      title: const Text(
+        "Please confirm if Transfer Amount is correct.",
+        style: TextStyle(color: Color(0xFFFE971A)),
+      ),
       isActive: true,
       state: StepState.complete,
       content: Column(
@@ -47,7 +50,10 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
     Step(
         isActive: true,
         state: StepState.complete,
-        title: const Text("Please confirm if Account Number is correct."),
+        title: const Text(
+          "Please confirm if Account Number is correct.",
+          style: TextStyle(color: Color(0xFFFE971A)),
+        ),
         content: Column(
           children: <Widget>[
             Container(

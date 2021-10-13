@@ -76,7 +76,15 @@ class TransferMoney extends State<TransferMoneyScreen> {
                     Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
-                      color: const Color(0xFF212121),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                            Color(0xFF252525),
+                            Color(0xFF414141),
+                            Color(0xFF212121)
+                          ])),
                     ),
                     Positioned(
                         top: 100,
